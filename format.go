@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/sachaos/todoist/lib"
+	todoist "github.com/sachaos/todoist/lib"
 	"github.com/urfave/cli"
 )
 
@@ -43,7 +43,7 @@ func GenerateColorHash(ids []int, colorList []color.Attribute) map[int]color.Att
 }
 
 func IdFormat(carrier todoist.IDCarrier) string {
-	return color.BlueString(strconv.Itoa(carrier.GetID()))
+	return color.YellowString(strconv.Itoa(carrier.GetID()))
 }
 
 func ContentPrefix(store *todoist.Store, item *todoist.Item, depth int, c *cli.Context) (prefix string) {
